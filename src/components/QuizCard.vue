@@ -3,10 +3,10 @@
   <div class="bg-white rounded-lg p-8 shadow-xl">
     <p class="text-gray-400">Question {{ question_index + 1 }}/10</p>
     <p class="text-gray-600 text-lg font-semibold text-center my-8">{{ quiz_details[question_index].question }}</p>
-    <ButtonAnswer :choice="this.choices[0]" :isDisabled="this.isDisabled" :correct_ans="this.quiz_details[this.question_index].correct_answer" @add-score-and-index="addScoreAndIndex" @disable-btns="disableBtns" @set-isNext-false="setIsNextFalse" :isNext="this.isNext" />
-    <ButtonAnswer :choice="this.choices[1]" :isDisabled="this.isDisabled" :correct_ans="this.quiz_details[this.question_index].correct_answer" @add-score-and-index="addScoreAndIndex" @disable-btns="disableBtns" @set-isNext-false="setIsNextFalse" :isNext="this.isNext"/>
-    <ButtonAnswer :choice="this.choices[2]" :isDisabled="this.isDisabled" :correct_ans="this.quiz_details[this.question_index].correct_answer" @add-score-and-index="addScoreAndIndex" @disable-btns="disableBtns" @set-isNext-false="setIsNextFalse" :isNext="this.isNext"/>
-    <ButtonAnswer :choice="this.choices[3]" :isDisabled="this.isDisabled" :correct_ans="this.quiz_details[this.question_index].correct_answer" @add-score-and-index="addScoreAndIndex" @disable-btns="disableBtns" @set-isNext-false="setIsNextFalse" :isNext="this.isNext"/>
+    <ButtonAnswer :key="this.btnKey" :choice="this.choices[0]" :isDisabled="this.isDisabled" :correct_ans="this.quiz_details[this.question_index].correct_answer" @add-score-and-index="addScoreAndIndex" @disable-btns="disableBtns" @set-isNext-false="setIsNextFalse" :isNext="this.isNext" />
+    <ButtonAnswer :key="this.btnKey" :choice="this.choices[1]" :isDisabled="this.isDisabled" :correct_ans="this.quiz_details[this.question_index].correct_answer" @add-score-and-index="addScoreAndIndex" @disable-btns="disableBtns" @set-isNext-false="setIsNextFalse" :isNext="this.isNext"/>
+    <ButtonAnswer :key="this.btnKey" :choice="this.choices[2]" :isDisabled="this.isDisabled" :correct_ans="this.quiz_details[this.question_index].correct_answer" @add-score-and-index="addScoreAndIndex" @disable-btns="disableBtns" @set-isNext-false="setIsNextFalse" :isNext="this.isNext"/>
+    <ButtonAnswer :key="this.btnKey" :choice="this.choices[3]" :isDisabled="this.isDisabled" :correct_ans="this.quiz_details[this.question_index].correct_answer" @add-score-and-index="addScoreAndIndex" @disable-btns="disableBtns" @set-isNext-false="setIsNextFalse" :isNext="this.isNext"/>
     
     <!-- <p v-if="this.isDisabled" class="text-sm text-gray-600 text-center mb-2">Correct Answer: {{ quiz_details[question_index].correct_answer }}</p> -->
     
@@ -38,6 +38,7 @@ import ButtonAnswer from './ButtonAnswer.vue';
     },
     data() {
       return {
+        btnKey: 0,
         isDisabled: false,
         isNext: false,
       }
@@ -76,6 +77,7 @@ import ButtonAnswer from './ButtonAnswer.vue';
           //disable to false
           this.isDisabled = false;
           this.isNext = true;
+          this.btnKey=!this.btnKey;
           this.$emit('increase-index')
         },
         setIsNextFalse(){
