@@ -1,30 +1,24 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="relative h-full">
+
+    <nav class="shadow-md">
+      <!-- <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> -->
+      <div class="max-w-7xl block mx-auto">
+  
+        <router-link to="/">
+          <div class="flex items-center h-20 mx-6">
+            <img src="../src/assets/7082687_23978.jpg" class="w-12 h-12 rounded-full mr-3">
+            <h1 class="text-2xl md:text-3xl text-yellow-400 font-bold">Trivia Quiz</h1>
+          </div>
+        </router-link>
+      </div>
+    </nav>
+    <router-view />
+    <footer class="bg-yellow-100 h-10 flex items-center mt-10 absolute -bottom-10 w-full">
+      <div class="max-w-7xl block mx-auto">
+        <p class="text-sm text-yellow-900 text-center">Powered by Open Trivia DB © 2022 | Alejah Sardiniola</p>
+      </div>    
+    </footer>
+  </div>
 </template>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
