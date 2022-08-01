@@ -12,10 +12,10 @@
     name: "ButtonAnswer",
     data() {
       return{
-        disabledBtn: "w-full border border-gray-300 bg-gray-300 rounded-md py-2 mb-3 text-white cursor-none",
+        disabledBtn: "w-full border border-gray-300 bg-gray-300 rounded-md py-2 mb-3 text-white cursor-default",
         normalBtn: "w-full border border-gray-300 rounded-md py-2 mb-3 text-gray-600 hover:border-yellow-500 cursor-pointer",
-        correctBtn: "w-full border border-green-500 bg-green-100 text-green-600  rounded-md py-2 mb-3 cursor-none",
-        wrongBtn: "w-full border border-red-500 bg-red-200 text-red-500  rounded-md py-2 mb-3 cursor-none",
+        correctBtn: "w-full border border-green-500 bg-green-100 text-green-600  rounded-md py-2 mb-3 cursor-default",
+        wrongBtn: "w-full border border-red-500 bg-red-200 text-red-500  rounded-md py-2 mb-3 cursor-default",
         next: true,
       }
     },
