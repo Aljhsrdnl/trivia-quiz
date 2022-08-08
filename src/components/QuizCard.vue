@@ -12,7 +12,8 @@
     
     <div class="flex" v-if="this.isDisabled">
       <div class="flex-grow"></div>
-      <button class="bg-yellow-500 text-white rounded-md py-2 px-8" v-on:click="emitIncreaseIndex">NEXT</button>
+      <!-- <button class="bg-yellow-500 text-white rounded-md py-2 px-8" v-on:click="emitIncreaseIndex">NEXT</button> -->
+      <button class="bg-yellow-500 text-white rounded-md py-2 px-8" v-on:click="emitIncreaseIndex">{{ question_index < 9 ? 'NEXT' : 'FINISH' }}</button>
     </div>
    
 </div>
