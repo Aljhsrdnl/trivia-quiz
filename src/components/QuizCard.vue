@@ -2,7 +2,7 @@
 
   <div class="bg-white rounded-lg p-8 shadow-xl">
     <p class="text-gray-400">Question {{ question_index + 1 }}/10</p>
-    <p class="text-gray-600 text-lg font-semibold text-center my-8">{{ quiz_details[question_index].question }}</p>
+    <p class="text-gray-600 text-lg font-semibold text-center my-8">{{ question }}</p>
     <ButtonAnswer :key="this.btnKey" :choice="this.choices[0]" :isDisabled="this.isDisabled" :correct_ans="this.quiz_details[this.question_index].correct_answer" @add-score-and-index="addScoreAndIndex" @disable-btns="disableBtns" @set-isNext-false="setIsNextFalse" :isNext="this.isNext" />
     <ButtonAnswer :key="this.btnKey" :choice="this.choices[1]" :isDisabled="this.isDisabled" :correct_ans="this.quiz_details[this.question_index].correct_answer" @add-score-and-index="addScoreAndIndex" @disable-btns="disableBtns" @set-isNext-false="setIsNextFalse" :isNext="this.isNext"/>
     <ButtonAnswer :key="this.btnKey" :choice="this.choices[2]" :isDisabled="this.isDisabled" :correct_ans="this.quiz_details[this.question_index].correct_answer" @add-score-and-index="addScoreAndIndex" @disable-btns="disableBtns" @set-isNext-false="setIsNextFalse" :isNext="this.isNext"/>
@@ -19,8 +19,8 @@
 </div>
 </template>
 <script>
- 
-import ButtonAnswer from './ButtonAnswer.vue';
+import he from 'he'
+;import ButtonAnswer from './ButtonAnswer.vue';
   export default {
     name: "Quizcard",
     props: {
@@ -61,6 +61,10 @@ import ButtonAnswer from './ButtonAnswer.vue';
                 temp_choices[randId] = temp;
             }
             return temp_choices;
+        },
+        question() {
+          const question = this.quiz_details[this.question_index].question;
+          return he.decode(question);
         }
     },
     methods: {
