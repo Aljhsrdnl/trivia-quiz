@@ -10,7 +10,8 @@
           <p class="text-gray-700 text-center text-lg">You answered <span class="font-bold">{{ score }}</span> out of 10 questions correctly.</p>
           <p class="text-gray-600 text-center"> {{ score >= 7 ? score_range[0] : score >= 4 && score <= 6 ? score_range[1] : score_range[2] }} </p>
           <div class="block mx-auto">
-            <Vue3Lottie :options="defaultOptions" :height="200" :width="200"/>
+            <!-- <Vue3Lottie :options="defaultOptions" :height="200" :width="200"/> -->
+            <Vue3Lottie :animationData="successLottie" :height="200" :width="200"/>
           </div>
           <router-link to="/">
             <button class="px-10 py-2 rounded-md bg-yellow-500 text-white hover:bg-yellow-600 transition-colors ease-in-out mt-10 block mx-auto">HOME</button>
@@ -33,9 +34,9 @@
 <script>
 import QuizCard from "../components/QuizCard.vue"
 import axios from "axios";
-import Vue3Lottie from 'vue3-lottie';
+import { Vue3Lottie } from 'vue3-lottie';
 import 'vue3-lottie/dist/style.css';
-import * as successLottie from '../assets/success.json';
+import successLottie from '../assets/success.json';
 
   export default {
     name: "QuizView",
@@ -47,9 +48,10 @@ import * as successLottie from '../assets/success.json';
       question_index: 0,
       score: 0,
       score_range: ['Keep up the good work!', 'Way to go!', 'There is plenty of room for improvements.'],
-      defaultOptions: {
-        animationData: successLottie.default
-      }
+      // defaultOptions: {
+      //   animationData: successLottie.default
+      // }
+      successLottie,  
      }
     },
     created(){
