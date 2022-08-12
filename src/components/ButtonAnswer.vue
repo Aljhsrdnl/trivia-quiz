@@ -4,10 +4,11 @@
     v-on:click="compareAnswer($event)"
     v-bind:value="this.choice"
     :disabled="this.isDisabled"
-    >{{ choice }} 
+    >{{ computed_choice }} 
   </button>
 </template>
 <script>
+import he from 'he';
   export default {
     name: "ButtonAnswer",
     data() {
@@ -38,6 +39,9 @@
       }
     }, 
     computed: {
+      computed_choice() {
+        return he.decode(this.choice);
+      },
       class(){
         if(this.clicked && this.isCorrect ) {
           // console.log(`clicked and correct`)
