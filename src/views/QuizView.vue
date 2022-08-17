@@ -10,7 +10,7 @@
           <p class="text-gray-700 text-center text-lg">You answered <span class="font-bold">{{ score }}</span> out of 10 questions correctly.</p>
           <p class="text-gray-600 text-center"> {{ score >= 7 ? score_range[0] : score >= 4 && score <= 6 ? score_range[1] : score_range[2] }} </p>
           <div class="block mx-auto">
-            <Vue3Lottie :animationData="successLottie" :height="800" :width="600" class="absolute -bottom-48 -left-20 block mx-auto -z-10" />
+            <Vue3Lottie :animationData="successLottie" :height="800" :width="600" class="absolute -bottom-48 -left-6 block mx-auto -z-10" />
           </div>
           <router-link to="/">
             <button class="px-10 py-2 rounded-md bg-yellow-500 text-white hover:bg-yellow-600 transition-colors ease-in-out mt-10 block mx-auto">HOME</button>
