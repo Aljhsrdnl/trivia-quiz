@@ -1,7 +1,7 @@
 <template>
-  <div class="relative h-full">
+  <div class="relative h-screen">
 
-    <nav class="shadow-md">
+    <nav class="shadow-md  relative">
       <!-- <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> -->
       <div class="max-w-7xl block mx-auto">
@@ -15,7 +15,7 @@
       </div>
     </nav>
     <router-view />
-    <footer class="bg-yellow-100 h-10 flex items-center mt-10 absolute -bottom-10 w-full">
+    <footer class="bg-yellow-100 h-10 flex items-center mt-10 absolute -bottom-20 w-full">
       <div class="max-w-7xl block mx-auto">
         <p class="text-sm text-yellow-900 text-center">Powered by Open Trivia DB © 2022 | Alejah Sardiniola</p>
       </div>    
