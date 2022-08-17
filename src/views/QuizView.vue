@@ -6,12 +6,11 @@
           <h3 class="text-gray-400 flex-grow">Category Name: <span class="text-yellow-500 font-bold">{{ quiz[0].category }}</span></h3>
           <h3 class="text-gray-400">Score: <span class="text-yellow-500 font-bold">{{ score }}</span></h3>
         </div>
-        <div v-if="question_index > 9" class="congratulations">
+        <div v-if="question_index > 9" class="congratulations relative">
           <p class="text-gray-700 text-center text-lg">You answered <span class="font-bold">{{ score }}</span> out of 10 questions correctly.</p>
           <p class="text-gray-600 text-center"> {{ score >= 7 ? score_range[0] : score >= 4 && score <= 6 ? score_range[1] : score_range[2] }} </p>
           <div class="block mx-auto">
-            <!-- <Vue3Lottie :options="defaultOptions" :height="200" :width="200"/> -->
-            <Vue3Lottie :animationData="successLottie" :height="200" :width="200"/>
+            <Vue3Lottie :animationData="successLottie" :height="800" :width="600" class="absolute -bottom-28 -left-20 block mx-auto" />
           </div>
           <router-link to="/">
             <button class="px-10 py-2 rounded-md bg-yellow-500 text-white hover:bg-yellow-600 transition-colors ease-in-out mt-10 block mx-auto">HOME</button>
