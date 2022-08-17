@@ -2,7 +2,7 @@
   <div class="max-w-7xl mx-auto block"> 
     <div class="mx-6 flex items-center justify-center h-screen">
       <div v-if="quiz" class="w-full md:w-3/5">
-        <div class="flex py-4" v-if="question_index <= 9">
+        <div class="block md:flex py-4" v-if="question_index <= 9">
           <h3 class="text-gray-400 flex-grow">Category Name: <span class="text-yellow-500 font-bold">{{ quiz[0].category }}</span></h3>
           <h3 class="text-gray-400">Score: <span class="text-yellow-500 font-bold">{{ score }}</span></h3>
         </div>
@@ -10,7 +10,7 @@
           <p class="text-gray-700 text-center text-lg">You answered <span class="font-bold">{{ score }}</span> out of 10 questions correctly.</p>
           <p class="text-gray-600 text-center"> {{ score >= 7 ? score_range[0] : score >= 4 && score <= 6 ? score_range[1] : score_range[2] }} </p>
           <div class="block mx-auto">
-            <Vue3Lottie :animationData="successLottie" :height="800" :width="600" class="absolute -bottom-48 -left-6 block mx-auto -z-10" />
+            <Vue3Lottie :animationData="successLottie" :height="800" :width="600" class="absolute -bottom-48 -left-48 md:-left-20 lg:left-12 block mx-auto -z-10" />
           </div>
           <router-link to="/">
             <button class="px-10 py-2 rounded-md bg-yellow-500 text-white hover:bg-yellow-600 transition-colors ease-in-out mt-10 block mx-auto">HOME</button>
