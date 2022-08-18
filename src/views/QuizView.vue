@@ -26,7 +26,8 @@
             />
         </div>
       </div>
-      <div v-else-if="!quiz">Loading...</div>
+      <!-- <div v-else-if="!quiz">Loading...</div> -->
+      <Vue3Lottie v-else-if="!quiz" :animationData="loadingLottie" :height="200" :width="200"/>
     </div>
   </div>
 </template>
@@ -36,6 +37,7 @@ import axios from "axios";
 import { Vue3Lottie } from 'vue3-lottie';
 import 'vue3-lottie/dist/style.css';
 import successLottie from '../assets/success.json';
+import loadingLottie from '../assets/loading.json';
 
   export default {
     name: "QuizView",
@@ -47,10 +49,8 @@ import successLottie from '../assets/success.json';
       question_index: 0,
       score: 0,
       score_range: ['Keep up the good work!', 'Way to go!', 'There is plenty of room for improvements.'],
-      // defaultOptions: {
-      //   animationData: successLottie.default
-      // }
       successLottie,  
+      loadingLottie,
      }
     },
     created(){
