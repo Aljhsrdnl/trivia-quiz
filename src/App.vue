@@ -1,9 +1,6 @@
 <template>
   <div class="relative h-full">
-
     <nav class="shadow-md  relative">
-      <!-- <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> -->
       <div class="max-w-7xl block mx-auto">
   
         <router-link to="/">
