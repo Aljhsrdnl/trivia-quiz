@@ -44,27 +44,18 @@ import he from 'he';
       },
       class(){
         if(this.clicked && this.isCorrect ) {
-          // console.log(`clicked and correct`)
-          // console.log(this.clicked)
-          // console.log(this.isCorrect)
           return this.correctBtn;
         }
         if (!this.clicked && this.isCorrect && this.isDisabled ) {
-          // console.log(`NOT clicked but correct`)
           return this.correctBtn;
         }
         else if (this.clicked && !this.isCorrect && this.isDisabled ) {
-          // console.log(`clicks but wrong`)
-          // console.log(this.clicked)
-          // console.log(this.isCorrect)
           return this.wrongBtn;
         }
         else if (!this.isDisabled) {
-          // console.log(`Normal Button`)
           return this.normalBtn;
         }
         else if (!this.clicked && !this.isCorrect && !this.isDisabled ) {
-          // console.log(`Disabled Button`)
           return this.disabledBtn;
         }
         else {
