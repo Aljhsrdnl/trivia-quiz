@@ -14,7 +14,7 @@
     <router-view />
     <footer class="bg-yellow-100 h-14 flex items-center mt-10 absolute -bottom-20 w-full">
       <div class="max-w-7xl block mx-auto">
-        <p class="text-sm text-yellow-900 text-center">Powered by Open Trivia DB © 2022 | Alejah Sardiniola</p>
+        <p class="text-sm text-yellow-900 text-center">Powered by Open Trivia DB © 2022 | Asther Louie Cabardo</p>
       </div>    
     </footer>
   </div>
